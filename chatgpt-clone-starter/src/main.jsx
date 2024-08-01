@@ -9,7 +9,7 @@ import RootLayout from "./layouts/rootLayout/RootLayout";
 import DashBoardLayout from "./layouts/dashboardlayout/DashBoardLayout";
 import SignInPage from "./routes/signinpage/SigninPage";
 import SignUpPage from "./routes/signuppage/SignupPage";
-import { ClerkProvider } from '@clerk/clerk-react'
+// import { ClerkProvider } from '@clerk/clerk-react'
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
 

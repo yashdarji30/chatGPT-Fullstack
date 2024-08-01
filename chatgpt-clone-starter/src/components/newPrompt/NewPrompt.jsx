@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import "./newPrompt.css";
-import Upload from "../upload/Upload";
 import { IKImage } from "imagekitio-react";
-import model from "../../lib/gemini";
 import Markdown from "react-markdown";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import model from "../../lib/gemini";
+import Upload from "../../upload/Upload";
 
 const NewPrompt = ({ data }) => {
   const [question, setQuestion] = useState("");
