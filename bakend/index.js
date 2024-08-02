@@ -13,7 +13,7 @@ dotenv.config();
 
 const port = process.env.PORT || 3000;
 const app = express()  ;
-  
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -47,12 +47,17 @@ app.get("/api/upload", (req, res) => {
   res.send(result);
 });
 
+// app.get("api/test",ClerkExpressRequireAuth(), (req,res) => {
+//   console.log("suucess")
+//   res.send("test");
+// })
+
 app.post("/api/chats", ClerkExpressRequireAuth(), async (req, res) => {
-  const userId = req.auth.userId;
-  const { text } = req.body;
+  // const userId = req.auth.userId;
+  const { userId,text } = req.body;
 
   try {
-    // CREATE A NEW CHAT
+    //CREATE A NEW CHAT 
     const newChat = new Chat({
       userId: userId,
       history: [{ role: "user", parts: [{ text }] }],
@@ -159,7 +164,7 @@ app.use((err, req, res, next) => {
   res.status(401).send("Unauthenticated!");
 });
 
-// PRODUCTION
+PRODUCTION
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.get("*", (req, res) => {
